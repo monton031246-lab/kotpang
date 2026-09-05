@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>โคตรปัง | เรียนทำขนม</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Kanit", sans-serif;
+            background: #fffaf5;
+            color: #3d2b24;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #8b4b35;
+            color: white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            min-height: 70px;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #ffd28a;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            transition: 0.25s;
+        }
+
+        .nav-menu a:hover {
+            color: #ffd28a;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            margin: 5px 0;
+
+            background: white;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            max-width: 1200px;
+            min-height: 650px;
+
+            margin: auto;
+            padding: 70px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 8px 18px;
+            margin-bottom: 15px;
+
+            background: #fff0df;
+            color: #a65335;
+
+            border-radius: 30px;
+
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.1;
+            margin: 0 0 20px;
+        }
+
+        .hero h1 span {
+            color: #b45f40;
+        }
+
+        .hero p {
+            max-width: 570px;
+            margin-bottom: 30px;
+
+            color: #705f56;
+
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 28px;
+
+            border-radius: 50px;
+            border: 0;
+
+            font-size: 17px;
+            font-weight: 500;
+
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn-primary {
+            background: #b45f40;
+            color: white;
+
+            box-shadow: 0 8px 20px rgba(180, 95, 64, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #9d4e32;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #8b4b35;
+            border: 2px solid #e7c5b5;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            border-color: #b45f40;
+        }
+
+        /* =========================
+           HERO VISUAL
+        ========================= */
+
+        .hero-visual {
+            flex: 0 0 440px;
+
+            display: flex;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .hero-circle {
+            width: 390px;
+            height: 390px;
+
+            background: #f8dfc5;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 180px;
+
+            box-shadow: 0 20px 50px rgba(120, 70, 40, 0.12);
+        }
+
+        .floating-card {
+            position: absolute;
+
+            background: white;
+
+            padding: 13px 20px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .floating-card.rating {
+            top: 30px;
+            right: 0;
+        }
+
+        .floating-card.learn {
+            bottom: 35px;
+            left: 0;
+        }
+
+        /* =========================
+           COURSES
+        ========================= */
+
+        .courses-section {
+            padding: 90px 25px;
+            background: white;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .small-title {
+            color: #b45f40;
+            font-weight: 500;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            margin: 8px 0 12px;
+        }
+
+        .section-header p {
+            color: #806f66;
+            font-size: 17px;
+        }
+
+        .course-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        .course-card {
+            position: relative;
+            overflow: hidden;
+
+            background: #fffaf5;
+
+            border: 1px solid #f0e1d6;
+            border-radius: 24px;
+
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: 0 18px 40px rgba(100, 60, 40, 0.12);
+        }
+
+        .course-image {
+            height: 180px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 85px;
+        }
+
+        .donut {
+            background: #f8d7d2;
+        }
+
+        .waffle {
+            background: #f7e0ae;
+        }
+
+        .brownie {
+            background: #dbc1b1;
+        }
+
+        .roll {
+            background: #f4d8c5;
+        }
+
+        .diy-cake {
+            background: #e5d8f2;
+        }
+
+        .cupcake {
+            background: #f8d7e8;
+        }
+
+        .bread {
+            background: #ead5ad;
+        }
+
+        .cake-pop {
+            background: #d8e8ef;
+        }
+
+        .course-content {
+            padding: 22px;
+        }
+
+        .course-content h3 {
+            margin: 0 0 10px;
+            font-size: 22px;
+        }
+
+        .course-content p {
+            margin: 0;
+
+            color: #76655d;
+
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .best-seller {
+            position: absolute;
+
+            top: 14px;
+            left: 14px;
+
+            padding: 5px 12px;
+
+            background: #b45f40;
+            color: white;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           BOOKING
+        ========================= */
+
+        .booking-section {
+            padding: 90px 25px;
+            background: #f8eee7;
+            scroll-margin-top: 70px;
+        }
+
+        .booking-box {
+            max-width: 850px;
+
+            margin: auto;
+            padding: 45px;
+
+            background: white;
+
+            border-radius: 28px;
+
+            box-shadow: 0 20px 60px rgba(100, 60, 40, 0.08);
+        }
+
+        .booking-title {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .booking-title .icon {
+            font-size: 42px;
+        }
+
+        .booking-title h2 {
+            margin: 5px 0;
+            font-size: 36px;
+        }
+
+        .booking-title p {
+            margin: 0;
+            color: #806f66;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            background: white;
+            color: #3d2b24;
+
+            border: 1px solid #dfd0c8;
+            border-radius: 12px;
+
+            font-size: 16px;
+
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #b45f40;
+
+            box-shadow:
+                0 0 0 3px rgba(180, 95, 64, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .date-message {
+            display: block;
+            min-height: 20px;
+            margin-top: 7px;
+            font-size: 13px;
+        }
+
+        .booking-btn {
+            width: 100%;
+
+            padding: 16px;
+
+            background: #b45f40;
+            color: white;
+
+            border: 0;
+            border-radius: 14px;
+
+            font-size: 18px;
+            font-weight: 500;
+
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .booking-btn:hover {
+            background: #9d4e32;
+            transform: translateY(-2px);
+        }
+
+        .booking-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* =========================
+           SUCCESS
+        ========================= */
+
+        .success-message {
+            display: none;
+
+            margin-top: 25px;
+            padding: 20px;
+
+            background: #eef9ef;
+
+            border: 1px solid #b9dfbd;
+            border-radius: 15px;
+
+            color: #286b31;
+
+            line-height: 1.8;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* =========================
+           LATEST BOOKING
+        ========================= */
+
+        .latest-booking {
+            display: none;
+
+            max-width: 850px;
+            margin: 30px auto 0;
+
+            padding: 25px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow: 0 8px 30px rgba(80, 50, 30, 0.06);
+        }
+
+        .latest-booking.show {
+            display: block;
+        }
+
+        .latest-booking h3 {
+            margin-top: 0;
+            color: #b45f40;
+        }
+
+        .latest-booking p {
+            margin: 8px 0;
+            color: #66554d;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 45px 25px;
+
+            background: #3d2b24;
+            color: white;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .footer-logo span {
+            color: #ffd28a;
+        }
+
+        .footer-text {
+            color: #cbbab2;
+            font-size: 14px;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-visual {
+                flex-basis: 380px;
+            }
+
+            .hero-circle {
+                width: 340px;
+                height: 340px;
+                font-size: 150px;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                min-height: 65px;
+                padding: 0 18px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+
+                top: 65px;
+                left: 0;
+                right: 0;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                gap: 0;
+
+                max-height: 0;
+                overflow: hidden;
+
+                background: #8b4b35;
+
+                transition: max-height 0.3s ease;
+
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                max-height: 300px;
+            }
+
+            .nav-menu li {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 15px 22px;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .hero {
+                min-height: auto;
+
+                padding: 55px 20px 70px;
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 17px;
+            }
+
+            .hero-buttons {
+                width: 100%;
+                max-width: 400px;
+
+                margin: auto;
+
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-visual {
+                width: 100%;
+                flex: none;
+                margin-top: 20px;
+            }
+
+            .hero-circle {
+                width: 280px;
+                height: 280px;
+                font-size: 125px;
+            }
+
+            .floating-card {
+                padding: 10px 14px;
+                font-size: 13px;
+            }
+
+            .floating-card.rating {
+                top: 10px;
+                right: 2%;
+            }
+
+            .floating-card.learn {
+                bottom: 10px;
+                left: 2%;
+            }
+
+            .courses-section {
+                padding: 70px 20px;
+            }
+
+            .section-header {
+                margin-bottom: 35px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .course-image {
+                height: 200px;
+            }
+
+            .booking-section {
+                padding: 70px 18px;
+            }
+
+            .booking-box {
+                padding: 30px 20px;
+                border-radius: 22px;
+            }
+
+            .booking-title h2 {
+                font-size: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-group input,
+            .form-group select {
+                min-height: 52px;
+                font-size: 16px;
+            }
+
+            .booking-btn {
+                min-height: 54px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 400px) {
+
+            .hero {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-circle {
+                width: 245px;
+                height: 245px;
+                font-size: 105px;
+            }
+
+            .floating-card {
+                padding: 8px 10px;
+                font-size: 11px;
+            }
+
+            .courses-section,
+            .booking-section {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                โคตร<span>ปัง</span> 🧁
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="เปิดเมนู"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+
+                <li>
+                    <a href="#home">หน้าแรก</a>
+                </li>
+
+                <li>
+                    <a href="#courses">คอร์สเรียน</a>
+                </li>
+
+                <li>
+                    <a href="#booking">จองคอร์ส</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    👩‍🍳 เรียนง่าย ทำได้จริง
+                </div>
+
+                <h1>
+                    เรียนทำขนม<br>
+                    ให้ <span>โคตรปัง!</span>
+                </h1>
+
+                <p>
+                    สนุกกับการทำขนมแบบลงมือทำจริง
+                    ตั้งแต่พื้นฐานจนสามารถนำไปต่อยอด
+                    สร้างรายได้เป็นของตัวเอง
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#booking"
+                        class="btn btn-primary"
+                    >
+                        จองคอร์สเลย →
+                    </a>
+
+                    <a
+                        href="#courses"
+                        class="btn btn-secondary"
+                    >
+                        ดูคอร์สเรียน
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="hero-circle">
+                    🧁
+                </div>
+
+                <div class="floating-card rating">
+                    ⭐ 4.9 / 5
+                </div>
+
+                <div class="floating-card learn">
+                    👩‍🍳 เรียนจริง ทำจริง
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COURSES
+        ========================= -->
+
+        <section
+            class="courses-section"
+            id="courses"
+        >
+
+            <div class="section-header">
+
+                <div class="small-title">
+                    🍰 COURSES
+                </div>
+
+                <h2>
+                    คอร์สเรียนยอดนิยม
+                </h2>
+
+                <p>
+                    เลือกคอร์สที่ชอบ
+                    แล้วมาเรียนรู้การทำขนม
+                    แบบลงมือทำจริงไปพร้อมกัน
+                </p>
+
+            </div>
+
+
+            <div
+                class="course-grid"
+                id="courseGrid"
+            >
+                <!-- JavaScript จะสร้างคอร์สตรงนี้ -->
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BOOKING
+        ========================= -->
+
+        <section
+            class="booking-section"
+            id="booking"
+        >
+
+            <div class="booking-box">
+
+                <div class="booking-title">
+
+                    <div class="icon">
+                        📅
+                    </div>
+
+                    <h2>
+                        จองคอร์สเรียน
+                    </h2>
+
+                    <p>
+                        เลือกคอร์สและวันที่ต้องการเรียน
+                    </p>
+
+                </div>
+
+
+                <form id="bookingForm">
+
+                    <!-- COURSE -->
+
+                    <div class="form-group">
+
+                        <label for="course">
+                            🍰 เลือกคอร์ส
+                        </label>
+
+                        <select
+                            id="course"
+                            required
+                        >
+
+                            <option value="">
+                                -- เลือกคอร์ส --
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- DATE -->
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            📅 วันที่เรียน
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            required
+                        >
+
+                        <small
+                            id="dateMessage"
+                            class="date-message"
+                        ></small>
+
+                    </div>
+
+
+                    <!-- NAME + PHONE -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                👤 ชื่อผู้จอง
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="กรอกชื่อ-นามสกุล"
+                                autocomplete="name"
+                                maxlength="100"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                📱 เบอร์โทรศัพท์
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="08xxxxxxxx"
+                                inputmode="numeric"
+                                autocomplete="tel"
+                                maxlength="10"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="booking-btn"
+                        id="bookingButton"
+                    >
+                        💾 บันทึกการจอง
+                    </button>
+
+
+                    <div
+                        id="successMessage"
+                        class="success-message"
+                    ></div>
+
+                </form>
+
+            </div>
+
+
+            <!-- =========================
+                 LATEST BOOKING
+            ========================= -->
+
+            <div
+                class="latest-booking"
+                id="latestBooking"
+            >
+
+                <h3>
+                    🎉 การจองล่าสุด
+                </h3>
+
+                <p>
+                    🎫 <strong>เลขที่การจอง:</strong>
+                    <span id="latestNumber"></span>
+                </p>
+
+                <p>
+                    🍰 <strong>คอร์ส:</strong>
+                    <span id="latestCourse"></span>
+                </p>
+
+                <p>
+                    📅 <strong>วันที่เรียน:</strong>
+                    <span id="latestDate"></span>
+                </p>
+
+                <p>
+                    👤 <strong>ชื่อ:</strong>
+                    <span id="latestName"></span>
+                </p>
+
+                <p>
+                    📱 <strong>เบอร์:</strong>
+                    <span id="latestPhone"></span>
+                </p>
+
+                <p>
+                    ⏳ <strong>สถานะ:</strong>
+                    รอการยืนยัน
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-logo">
+                โคตร<span>ปัง</span> 🧁
+            </div>
+
+            <div class="footer-text">
+                © 2026 โคตรปัง
+                — เรียนทำขนมแบบลงมือทำจริง
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =====================================================
+           COURSE DATA
+
+           แก้ชื่อ / รายละเอียด / emoji ตรงนี้ได้เลย
+        ===================================================== */
+
+        const COURSES = [
+
+            {
+                id: "donut",
+                name: "คอร์สโดนัท",
+                description: "เรียนทำโดนัทแบบลงมือทำจริง ตั้งแต่พื้นฐานจนสามารถทำขายได้",
+                emoji: "🍩",
+                style: "donut"
+            },
+
+            {
+                id: "waffle",
+                name: "คอร์สวาฟเฟิล",
+                description: "เรียนทำวาฟเฟิล เนื้อหอม กรอบนอกนุ่มใน พร้อมเทคนิคการทำ",
+                emoji: "🧇",
+                style: "waffle"
+            },
+
+            {
+                id: "brownie",
+                name: "คอร์สบราวนี่",
+                description: "เรียนทำบราวนี่เนื้อเข้มข้น พร้อมเทคนิคการอบให้อร่อย",
+                emoji: "🍫",
+                style: "brownie"
+            },
+
+            {
+                id: "roll",
+                name: "คอร์สโรลเค้ก",
+                description: "เรียนทำโรลเค้ก เนื้อนุ่ม ม้วนสวย พร้อมเทคนิคสำคัญ",
+                emoji: "🍰",
+                style: "roll"
+            },
+
+            {
+                id: "diy-cake",
+                name: "คอร์ส DIY Cake",
+                description: "ออกแบบและตกแต่งเค้กในสไตล์ของตัวเอง พร้อมเทคนิคการแต่งเค้ก",
+                emoji: "🎂",
+                style: "diy-cake"
+            },
+
+            {
+                id: "cupcake",
+                name: "คอร์สคัพเค้ก",
+                description: "เรียนทำคัพเค้กพร้อมการตกแต่งให้น่ารักและน่าทาน",
+                emoji: "🧁",
+                style: "cupcake"
+            },
+
+            {
+                id: "bread",
+                name: "คอร์สขนมปัง",
+                description: "เรียนทำขนมปังตั้งแต่พื้นฐาน พร้อมเทคนิคการนวดและการอบ",
+                emoji: "🍞",
+                style: "bread"
+            },
+
+            {
+                id: "cake-pop",
+                name: "คอร์ส Cake Pop",
+                description: "เรียนทำเค้กป๊อปน่ารัก ๆ เหมาะสำหรับทำขายและทำเป็นของฝาก",
+                emoji: "🍡",
+                style: "cake-pop"
+            }
+
+        ];
+
+
+        /* =====================================================
+           DOM
+        ===================================================== */
+
+        const courseGrid =
+            document.getElementById("courseGrid");
+
+        const courseSelect =
+            document.getElementById("course");
+
+        const bookingForm =
+            document.getElementById("bookingForm");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+        const dateInput =
+            document.getElementById("date");
+
+        const dateMessage =
+            document.getElementById("dateMessage");
+
+        const bookingButton =
+            document.getElementById("bookingButton");
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navMenu =
+            document.getElementById("navMenu");
+
+        const latestBooking =
+            document.getElementById("latestBooking");
+
+
+        /* =====================================================
+           SECURITY
+        ===================================================== */
+
+        function escapeHTML(value) {
+
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* =====================================================
+           LOAD COURSES
+        ===================================================== */
+
+        function loadCourses() {
+
+            /*
+                สร้างการ์ดคอร์ส
+            */
+
+            courseGrid.innerHTML =
+                COURSES.map(function(course, index) {
+
+                    return `
+
+                        <article class="course-card">
+
+                            ${
+                                index === 0
+                                ?
+                                `
+                                <div class="best-seller">
+                                    ⭐ BEST SELLER
+                                </div>
+                                `
+                                :
+                                ""
+                            }
+
+                            <div
+                                class="course-image ${escapeHTML(course.style)}"
+                            >
+                                ${escapeHTML(course.emoji)}
+                            </div>
+
+                            <div class="course-content">
+
+                                <h3>
+                                    ${escapeHTML(course.name)}
+                                </h3>
+
+                                <p>
+                                    ${escapeHTML(course.description)}
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    `;
+
+                }).join("");
+
+
+            /*
+                สร้างรายการใน Select
+            */
+
+            courseSelect.innerHTML = `
+                <option value="">
+                    -- เลือกคอร์ส --
+                </option>
+            `;
+
+
+            COURSES.forEach(function(course) {
+
+                const option =
+                    document.createElement("option");
+
+                option.value =
+                    course.id;
+
+                option.textContent =
+                    course.name;
+
+                courseSelect.appendChild(option);
+
+            });
+
+        }
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        menuToggle.addEventListener(
+            "click",
+            function() {
+
+                navMenu.classList.toggle("active");
+
+                menuToggle.classList.toggle("active");
+
+                const isOpen =
+                    navMenu.classList.contains("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-menu a")
+            .forEach(function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        navMenu.classList.remove("active");
+
+                        menuToggle.classList.remove("active");
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* =====================================================
+           DATE SYSTEM
+        ===================================================== */
+
+        function getTodayString() {
+
+            const today =
+                new Date();
+
+            const year =
+                today.getFullYear();
+
+            const month =
+                String(
+                    today.getMonth() + 1
+                ).padStart(2, "0");
+
+            const day =
+                String(
+                    today.getDate()
+                ).padStart(2, "0");
+
+            return `${year}-${month}-${day}`;
+
+        }
+
+
+        function setMinDate() {
+
+            dateInput.min =
+                getTodayString();
+
+        }
+
+
+        setMinDate();
+
+
+        dateInput.addEventListener(
+            "change",
+            function() {
+
+                if (!this.value) {
+
+                    dateMessage.textContent = "";
+
+                    return;
+                }
+
+
+                const selectedDate =
+                    new Date(
+                        this.value +
+                        "T00:00:00"
+                    );
+
+
+                const today =
+                    new Date();
+
+                today.setHours(
+                    0,
+                    0,
+                    0,
+                    0
+                );
+
+
+                if (selectedDate < today) {
+
+                    this.value = "";
+
+                    dateMessage.textContent =
+                        "❌ ไม่สามารถเลือกวันที่ผ่านมาแล้วได้";
+
+                    dateMessage.style.color =
+                        "#d9534f";
+
+                    return;
+                }
+
+
+                dateMessage.textContent =
+                    "✓ วันที่สามารถจองได้";
+
+                dateMessage.style.color =
+                    "#4caf50";
+
+            }
+        );
+
+
+        /* =====================================================
+           BOOKING NUMBER
+        ===================================================== */
+
+        function generateBookingNumber() {
+
+            const now =
+                new Date();
+
+            const timestamp =
+                now.getTime()
+                    .toString()
+                    .slice(-8);
+
+            const random =
+                Math.floor(
+                    100 +
+                    Math.random() * 900
+                );
+
+            return "KP-" +
+                timestamp +
+                random;
+
+        }
+
+
+        /* =====================================================
+           FORMAT DATE
+        ===================================================== */
+
+        function formatThaiDate(dateString) {
+
+            const date =
+                new Date(
+                    dateString +
+                    "T00:00:00"
+                );
+
+            return date.toLocaleDateString(
+                "th-TH",
+                {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           PHONE
+        ===================================================== */
+
+        document
+            .getElementById("phone")
+            .addEventListener(
+                "input",
+                function() {
+
+                    this.value =
+                        this.value
+                            .replace(/\D/g, "")
+                            .slice(0, 10);
+
+                }
+            );
+
+
+        /* =====================================================
+           SHOW LATEST BOOKING
+        ===================================================== */
+
+        function showLatestBooking(data) {
+
+            document.getElementById(
+                "latestNumber"
+            ).textContent =
+                data.bookingNumber;
+
+            document.getElementById(
+                "latestCourse"
+            ).textContent =
+                data.course;
+
+            document.getElementById(
+                "latestDate"
+            ).textContent =
+                formatThaiDate(data.date);
+
+            document.getElementById(
+                "latestName"
+            ).textContent =
+                data.name;
+
+            document.getElementById(
+                "latestPhone"
+            ).textContent =
+                data.phone;
+
+            latestBooking.classList.add("show");
+
+        }
+
+
+        /* =====================================================
+           BOOKING FORM
+        ===================================================== */
+
+        bookingForm.addEventListener(
+            "submit",
+            async function(e) {
+
+                e.preventDefault();
+
+
+                /* =========================
+                   GET DATA
+                ========================= */
+
+                const courseId =
+                    courseSelect.value;
+
+                const date =
+                    dateInput.value;
+
+                const name =
+                    document
+                        .getElementById("name")
+                        .value
+                        .trim();
+
+                const phone =
+                    document
+                        .getElementById("phone")
+                        .value
+                        .trim();
+
+
+                /* =========================
+                   CHECK EMPTY
+                ========================= */
+
+                if (
+                    !courseId ||
+                    !date ||
+                    !name ||
+                    !phone
+                ) {
+
+                    alert(
+                        "กรุณากรอกข้อมูลให้ครบถ้วน"
+                    );
+
+                    return;
+
+                }
+
+
+                /* =========================
+                   CHECK DATE
+                ========================= */
+
+                const selectedDate =
+                    new Date(
+                        date +
+                        "T00:00:00"
+                    );
+
+                const today =
+                    new Date();
+
+                today.setHours(
+                    0,
+                    0,
+                    0,
+                    0
+                );
+
+
+                if (selectedDate < today) {
+
+                    alert(
+                        "❌ ไม่สามารถจองวันที่ผ่านมาแล้วได้"
+                    );
+
+                    setMinDate();
+
+                    return;
+
+                }
+
+
+                /* =========================
+                   CHECK PHONE
+                ========================= */
+
+                const phonePattern =
+                    /^[0-9]{9,10}$/;
+
+                if (
+                    !phonePattern.test(phone)
+                ) {
+
+                    alert(
+                        "❌ กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง"
+                    );
+
+                    return;
+
+                }
+
+
+                /* =========================
+                   FIND COURSE
+                ========================= */
+
+                const selectedCourse =
+                    COURSES.find(
+                        function(course) {
+
+                            return course.id ===
+                                courseId;
+
+                        }
+                    );
+
+
+                if (!selectedCourse) {
+
+                    alert(
+                        "❌ ไม่พบข้อมูลคอร์สที่เลือก"
+                    );
+
+                    return;
+
+                }
+
+
+                /* =========================
+                   DISABLE BUTTON
+                ========================= */
+
+                const originalText =
+                    bookingButton.textContent;
+
+                bookingButton.disabled =
+                    true;
+
+                bookingButton.textContent =
+                    "⏳ กำลังเตรียมการจอง...";
+
+
+                /* =========================
+                   CREATE BOOKING
+                ========================= */
+
+                const bookingNumber =
+                    generateBookingNumber();
+
+
+                /*
+                    ตอนนี้ยังไม่ได้ส่งไป Google Sheets
+
+                    ขั้นต่อไปเราจะเอา URL
+                    Google Apps Script มาใส่ตรงนี้
+                */
+
+                const bookingData = {
+
+                    bookingNumber:
+                        bookingNumber,
+
+                    courseId:
+                        selectedCourse.id,
+
+                    course:
+                        selectedCourse.name,
+
+                    date:
+                        date,
+
+                    name:
+                        name,
+
+                    phone:
+                        phone,
+
+                    status:
+                        "รอการยืนยัน"
+
+                };
+
+
+                /*
+                    จำลองการบันทึกชั่วคราว
+                    เพื่อทดสอบหน้าเว็บก่อน
+                */
+
+                await new Promise(
+                    function(resolve) {
+
+                        setTimeout(
+                            resolve,
+                            700
+                        );
+
+                    }
+                );
+
+
+                /* =========================
+                   SUCCESS
+                ========================= */
+
+                const formattedDate =
+                    formatThaiDate(date);
+
+
+                successMessage.innerHTML = `
+
+                    <strong>
+                        🎉 เตรียมข้อมูลการจองสำเร็จ!
+                    </strong>
+
+                    <br><br>
+
+                    🎫
+                    <strong>
+                        เลขที่การจอง:
+                    </strong>
+
+                    ${escapeHTML(
+                        bookingNumber
+                    )}
+
+                    <br>
+
+                    🍰
+                    <strong>
+                        คอร์ส:
+                    </strong>
+
+                    ${escapeHTML(
+                        selectedCourse.name
+                    )}
+
+                    <br>
+
+                    📅
+                    <strong>
+                        วันที่:
+                    </strong>
+
+                    ${escapeHTML(
+                        formattedDate
+                    )}
+
+                    <br><br>
+
+                    ℹ️
+                    ตอนนี้เป็นโหมดทดสอบ
+                    ยังไม่ได้ส่งข้อมูลไป Google Sheets
+
+                `;
+
+
+                successMessage.classList.add(
+                    "show"
+                );
+
+
+                /*
+                    แสดงรายการจองล่าสุด
+                */
+
+                showLatestBooking(
+                    bookingData
+                );
+
+
+                /* =========================
+                   RESET FORM
+                ========================= */
+
+                bookingForm.reset();
+
+                dateMessage.textContent = "";
+
+                setMinDate();
+
+
+                /* =========================
+                   ENABLE BUTTON
+                ========================= */
+
+                bookingButton.disabled =
+                    false;
+
+                bookingButton.textContent =
+                    originalText;
+
+
+                /* =========================
+                   SCROLL
+                ========================= */
+
+                latestBooking.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+        );
+
+
+        /* =====================================================
+           START APP
+        ===================================================== */
+
+        function initApp() {
+
+            loadCourses();
+
+            setMinDate();
+
+        }
+
+
+        initApp();
+
+    </script>
+
+</body>
+
+</html>
