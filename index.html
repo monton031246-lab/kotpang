@@ -16,6 +16,7 @@
     >
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -527,10 +528,6 @@
             transform: none;
         }
 
-        /* =========================
-           SUCCESS
-        ========================= */
-
         .success-message {
             display: none;
 
@@ -859,6 +856,7 @@
                 padding-right: 15px;
             }
         }
+
     </style>
 </head>
 
@@ -914,9 +912,7 @@
 
     <main>
 
-        <!-- =========================
-             HERO
-        ========================= -->
+        <!-- HERO -->
 
         <section class="hero" id="home">
 
@@ -1008,9 +1004,7 @@
             <div
                 class="course-grid"
                 id="courseGrid"
-            >
-                <!-- JavaScript จะสร้างคอร์สตรงนี้ -->
-            </div>
+            ></div>
 
         </section>
 
@@ -1045,8 +1039,6 @@
 
                 <form id="bookingForm">
 
-                    <!-- COURSE -->
-
                     <div class="form-group">
 
                         <label for="course">
@@ -1067,8 +1059,6 @@
                     </div>
 
 
-                    <!-- DATE -->
-
                     <div class="form-group">
 
                         <label for="date">
@@ -1088,8 +1078,6 @@
 
                     </div>
 
-
-                    <!-- NAME + PHONE -->
 
                     <div class="form-row">
 
@@ -1151,9 +1139,7 @@
             </div>
 
 
-            <!-- =========================
-                 LATEST BOOKING
-            ========================= -->
+            <!-- LATEST BOOKING -->
 
             <div
                 class="latest-booking"
@@ -1231,8 +1217,6 @@
 
         /* =====================================================
            COURSE DATA
-
-           แก้ชื่อ / รายละเอียด / emoji ตรงนี้ได้เลย
         ===================================================== */
 
         const COURSES = [
@@ -1240,7 +1224,8 @@
             {
                 id: "donut",
                 name: "คอร์สโดนัท",
-                description: "เรียนทำโดนัทแบบลงมือทำจริง ตั้งแต่พื้นฐานจนสามารถทำขายได้",
+                description:
+                    "เรียนทำโดนัทแบบลงมือทำจริง ตั้งแต่พื้นฐานจนสามารถทำขายได้",
                 emoji: "🍩",
                 style: "donut"
             },
@@ -1248,7 +1233,8 @@
             {
                 id: "waffle",
                 name: "คอร์สวาฟเฟิล",
-                description: "เรียนทำวาฟเฟิล เนื้อหอม กรอบนอกนุ่มใน พร้อมเทคนิคการทำ",
+                description:
+                    "เรียนทำวาฟเฟิล เนื้อหอม กรอบนอกนุ่มใน พร้อมเทคนิคการทำ",
                 emoji: "🧇",
                 style: "waffle"
             },
@@ -1256,7 +1242,8 @@
             {
                 id: "brownie",
                 name: "คอร์สบราวนี่",
-                description: "เรียนทำบราวนี่เนื้อเข้มข้น พร้อมเทคนิคการอบให้อร่อย",
+                description:
+                    "เรียนทำบราวนี่เนื้อเข้มข้น พร้อมเทคนิคการอบให้อร่อย",
                 emoji: "🍫",
                 style: "brownie"
             },
@@ -1264,7 +1251,8 @@
             {
                 id: "roll",
                 name: "คอร์สโรลเค้ก",
-                description: "เรียนทำโรลเค้ก เนื้อนุ่ม ม้วนสวย พร้อมเทคนิคสำคัญ",
+                description:
+                    "เรียนทำโรลเค้ก เนื้อนุ่ม ม้วนสวย พร้อมเทคนิคสำคัญ",
                 emoji: "🍰",
                 style: "roll"
             },
@@ -1272,7 +1260,8 @@
             {
                 id: "diy-cake",
                 name: "คอร์ส DIY Cake",
-                description: "ออกแบบและตกแต่งเค้กในสไตล์ของตัวเอง พร้อมเทคนิคการแต่งเค้ก",
+                description:
+                    "ออกแบบและตกแต่งเค้กในสไตล์ของตัวเอง พร้อมเทคนิคการแต่งเค้ก",
                 emoji: "🎂",
                 style: "diy-cake"
             },
@@ -1280,7 +1269,8 @@
             {
                 id: "cupcake",
                 name: "คอร์สคัพเค้ก",
-                description: "เรียนทำคัพเค้กพร้อมการตกแต่งให้น่ารักและน่าทาน",
+                description:
+                    "เรียนทำคัพเค้กพร้อมการตกแต่งให้น่ารักและน่าทาน",
                 emoji: "🧁",
                 style: "cupcake"
             },
@@ -1288,7 +1278,8 @@
             {
                 id: "bread",
                 name: "คอร์สขนมปัง",
-                description: "เรียนทำขนมปังตั้งแต่พื้นฐาน พร้อมเทคนิคการนวดและการอบ",
+                description:
+                    "เรียนทำขนมปังตั้งแต่พื้นฐาน พร้อมเทคนิคการนวดและการอบ",
                 emoji: "🍞",
                 style: "bread"
             },
@@ -1296,7 +1287,8 @@
             {
                 id: "cake-pop",
                 name: "คอร์ส Cake Pop",
-                description: "เรียนทำเค้กป๊อปน่ารัก ๆ เหมาะสำหรับทำขายและทำเป็นของฝาก",
+                description:
+                    "เรียนทำเค้กป๊อปน่ารัก ๆ เหมาะสำหรับทำขายและทำเป็นของฝาก",
                 emoji: "🍡",
                 style: "cake-pop"
             }
@@ -1335,9 +1327,6 @@
         const navMenu =
             document.getElementById("navMenu");
 
-        const latestBooking =
-            document.getElementById("latestBooking");
-
 
         /* =====================================================
            SECURITY
@@ -1360,10 +1349,6 @@
         ===================================================== */
 
         function loadCourses() {
-
-            /*
-                สร้างการ์ดคอร์ส
-            */
 
             courseGrid.innerHTML =
                 COURSES.map(function(course, index) {
@@ -1408,10 +1393,6 @@
 
                 }).join("");
 
-
-            /*
-                สร้างรายการใน Select
-            */
 
             courseSelect.innerHTML = `
                 <option value="">
@@ -1520,9 +1501,6 @@
         }
 
 
-        setMinDate();
-
-
         dateInput.addEventListener(
             "change",
             function() {
@@ -1532,6 +1510,7 @@
                     dateMessage.textContent = "";
 
                     return;
+
                 }
 
 
@@ -1564,6 +1543,7 @@
                         "#d9534f";
 
                     return;
+
                 }
 
 
@@ -1605,30 +1585,6 @@
 
 
         /* =====================================================
-           FORMAT DATE
-        ===================================================== */
-
-        function formatThaiDate(dateString) {
-
-            const date =
-                new Date(
-                    dateString +
-                    "T00:00:00"
-                );
-
-            return date.toLocaleDateString(
-                "th-TH",
-                {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric"
-                }
-            );
-
-        }
-
-
-        /* =====================================================
            PHONE
         ===================================================== */
 
@@ -1645,42 +1601,6 @@
 
                 }
             );
-
-
-        /* =====================================================
-           SHOW LATEST BOOKING
-        ===================================================== */
-
-        function showLatestBooking(data) {
-
-            document.getElementById(
-                "latestNumber"
-            ).textContent =
-                data.bookingNumber;
-
-            document.getElementById(
-                "latestCourse"
-            ).textContent =
-                data.course;
-
-            document.getElementById(
-                "latestDate"
-            ).textContent =
-                formatThaiDate(data.date);
-
-            document.getElementById(
-                "latestName"
-            ).textContent =
-                data.name;
-
-            document.getElementById(
-                "latestPhone"
-            ).textContent =
-                data.phone;
-
-            latestBooking.classList.add("show");
-
-        }
 
 
         /* =====================================================
@@ -1839,148 +1759,141 @@
                     generateBookingNumber();
 
 
-              const APP_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxyEsJiKVzb5k0o72HY5Wdg4mhH10z94aTCqcmomngtqhAWLejDdOZueXNVhvMyD3HIsA/exec";
+                /* =========================
+                   GOOGLE APPS SCRIPT
+                ========================= */
 
-const bookingData = {
-    bookingNumber: bookingNumber,
-    courseId: selectedCourse.id,
-    course: selectedCourse.name,
-    date: date,
-    name: name,
-    phone: phone,
-    status: "รอการยืนยัน"
-};
-
-try {
-
-    bookingButton.textContent =
-        "⏳ กำลังบันทึกการจอง...";
-
-    await fetch(APP_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "text/plain;charset=utf-8"
-        },
-        body: JSON.stringify(bookingData)
-    });
-
-} catch (error) {
-
-    console.error(
-        "Booking error:",
-        error
-    );
-
-    successMessage.innerHTML = `
-        <strong>
-            ❌ ไม่สามารถส่งข้อมูลการจองได้
-        </strong>
-        <br><br>
-        กรุณาลองใหม่อีกครั้ง
-    `;
-
-    successMessage.classList.add("show");
-
-    bookingButton.disabled = false;
-    bookingButton.textContent = originalText;
-
-    return;
-}
-
-                const formattedDate =
-                    formatThaiDate(date);
+                const APP_SCRIPT_URL =
+                    "https://script.google.com/macros/s/AKfycbxyEsJiKVzb5k0o72HY5Wdg4mhH10z94aTCqcmomngtqhAWLejDdOZueXNVhvMyD3HIsA/exec";
 
 
-                successMessage.innerHTML = `
+                const bookingData = {
 
-                    <strong>
-                         🎉 เตรียมข้อมูลการจองสำเร็จ!
-                    </strong>
+                    bookingNumber:
+                        bookingNumber,
 
-                    <br><br>
+                    courseId:
+                        selectedCourse.id,
 
-                    🎫
-                    <strong>
-                        เลขที่การจอง:
-                    </strong>
+                    course:
+                        selectedCourse.name,
 
-                    ${escapeHTML(
-                        bookingNumber
-                    )}
+                    date:
+                        date,
 
-                    <br>
+                    name:
+                        name,
 
-                    🍰
-                    <strong>
-                        คอร์ส:
-                    </strong>
+                    phone:
+                        phone,
 
-                    ${escapeHTML(
-                        selectedCourse.name
-                    )}
+                    status:
+                        "รอการยืนยัน"
 
-                    <br>
-
-                    📅
-                    <strong>
-                        วันที่:
-                    </strong>
-
-                    ${escapeHTML(
-                        formattedDate
-                    )}
-
-                  
-
-                `;
+                };
 
 
-                successMessage.classList.add(
-                    "show"
+                try {
+
+                    bookingButton.textContent =
+                        "⏳ กำลังบันทึกการจอง...";
+
+
+                    await fetch(
+                        APP_SCRIPT_URL,
+                        {
+                            method: "POST",
+
+                            mode: "no-cors",
+
+                            headers: {
+                                "Content-Type":
+                                    "text/plain;charset=utf-8"
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    bookingData
+                                )
+                        }
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Booking error:",
+                        error
+                    );
+
+
+                    successMessage.innerHTML = `
+
+                        <strong>
+                            ❌ ไม่สามารถส่งข้อมูลการจองได้
+                        </strong>
+
+                        <br><br>
+
+                        กรุณาลองใหม่อีกครั้ง
+
+                    `;
+
+
+                    successMessage.classList.add(
+                        "show"
+                    );
+
+
+                    bookingButton.disabled =
+                        false;
+
+                    bookingButton.textContent =
+                        originalText;
+
+
+                    return;
+
+                }
+
+
+                /* =================================================
+                   SAVE BOOKING DATA
+                   สำหรับหน้า payment.html
+                ================================================= */
+
+                sessionStorage.setItem(
+                    "kotpangBooking",
+                    JSON.stringify({
+
+                        bookingNumber:
+                            bookingNumber,
+
+                        course:
+                            selectedCourse.name,
+
+                        date:
+                            date,
+
+                        name:
+                            name,
+
+                        phone:
+                            phone,
+
+                        amount:
+                            200
+
+                    })
                 );
 
 
-                /*
-                    แสดงรายการจองล่าสุด
-                */
+                /* =================================================
+                   REDIRECT TO PAYMENT PAGE
+                ================================================= */
 
-                showLatestBooking(
-                    bookingData
-                );
-
-
-                /* =========================
-                   RESET FORM
-                ========================= */
-
-                bookingForm.reset();
-
-                dateMessage.textContent = "";
-
-                setMinDate();
-
-
-                /* =========================
-                   ENABLE BUTTON
-                ========================= */
-
-                bookingButton.disabled =
-                    false;
-
-                bookingButton.textContent =
-                    originalText;
-
-
-                /* =========================
-                   SCROLL
-                ========================= */
-
-                latestBooking.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                window.location.href =
+                    "payment.html";
 
             }
         );
@@ -2000,20 +1913,6 @@ try {
 
 
         initApp();
-
-        sessionStorage.setItem(
-    "kotpangBooking",
-    JSON.stringify({
-        bookingNumber: bookingNumber,
-        course: selectedCourse.name,
-        date: date,
-        name: name,
-        phone: phone,
-        amount: 200
-    })
-);
-
-window.location.href = "payment.html";
 
     </script>
 
