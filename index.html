@@ -2001,6 +2001,20 @@ try {
 
         initApp();
 
+        sessionStorage.setItem(
+    "kotpangBooking",
+    JSON.stringify({
+        bookingNumber: bookingNumber,
+        course: selectedCourse.name,
+        date: date,
+        name: name,
+        phone: phone,
+        amount: 200
+    })
+);
+
+window.location.href = "payment.html";
+
     </script>
 
 </body>
