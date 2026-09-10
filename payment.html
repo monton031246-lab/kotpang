@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ชำระเงิน | โคตรปัง</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f3ed;
+            color: #4b2e1f;
+        }
+
+        .payment-page {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 35px 16px;
+        }
+
+        .payment-card {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            background: #ffffff;
+
+            border-radius: 28px;
+
+            padding: 30px 22px 26px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(70, 45, 25, 0.12);
+
+            text-align: center;
+        }
+
+        .payment-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 4px;
+        }
+
+        h1 {
+
+            margin:
+                0 0 8px;
+
+            font-size: 32px;
+        }
+
+        .subtitle {
+
+            margin:
+                0 0 20px;
+
+            color: #777;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           BOOKING SUMMARY
+        ========================= */
+
+        .booking-summary {
+
+            background: #f8f3ed;
+
+            border-radius: 18px;
+
+            padding: 16px 18px;
+
+            margin-bottom: 22px;
+
+            text-align: left;
+        }
+
+        .booking-summary p {
+
+            margin: 7px 0;
+        }
+
+        .booking-summary strong {
+
+            color: #6b4630;
+        }
+
+        /* =========================
+           QR CODE
+        ========================= */
+
+        .qr-payment {
+
+            width: min(100%, 480px);
+
+            display: block;
+
+            margin:
+                0 auto 14px;
+
+            border-radius: 12px;
+        }
+
+        /* =========================
+           AMOUNT
+        ========================= */
+
+        .amount {
+
+            font-size: 30px;
+
+            font-weight: 800;
+
+            color: #0b3d68;
+
+            margin:
+                4px 0 2px;
+        }
+
+        .note {
+
+            color: #666;
+
+            line-height: 1.7;
+
+            margin:
+                0 0 20px;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .actions {
+
+            display: flex;
+
+            gap: 10px;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+        }
+
+        .actions a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            padding:
+                12px 20px;
+
+            border-radius: 12px;
+
+            font-weight: 700;
+        }
+
+        .home {
+
+            background: #6b4630;
+
+            color: white;
+        }
+
+        .booking {
+
+            background: #f0e5d8;
+
+            color: #4b2e1f;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .payment-card {
+
+                padding:
+                    24px 14px;
+
+                border-radius: 22px;
+            }
+
+            h1 {
+
+                font-size: 27px;
+            }
+
+            .amount {
+
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="payment-page">
+
+
+        <section class="payment-card">
+
+
+            <div class="payment-icon">
+                💳
+            </div>
+
+
+            <h1>
+                ชำระเงินเพื่อยืนยันการจอง
+            </h1>
+
+
+            <p class="subtitle">
+                สแกน QR Code ด้านล่างเพื่อชำระเงิน
+            </p>
+
+
+            <!-- =========================
+                 BOOKING INFORMATION
+            ========================= -->
+
+            <div class="booking-summary">
+
+                <p>
+                    🎫
+                    <strong>
+                        เลขที่การจอง:
+                    </strong>
+
+                    <span id="bookingNumber">
+                        -
+                    </span>
+                </p>
+
+
+                <p>
+                    🍰
+                    <strong>
+                        คอร์ส:
+                    </strong>
+
+                    <span id="course">
+                        -
+                    </span>
+                </p>
+
+
+                <p>
+                    📅
+                    <strong>
+                        วันที่เรียน:
+                    </strong>
+
+                    <span id="date">
+                        -
+                    </span>
+                </p>
+
+
+                <p>
+                    👤
+                    <strong>
+                        ชื่อ:
+                    </strong>
+
+                    <span id="name">
+                        -
+                    </span>
+                </p>
+
+
+                <p>
+                    📱
+                    <strong>
+                        เบอร์:
+                    </strong>
+
+                    <span id="phone">
+                        -
+                    </span>
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 QR CODE
+            ========================= -->
+
+            <img
+                class="qr-payment"
+                src="qr-payment.png"
+                alt="QR Code สำหรับชำระเงิน"
+            >
+
+
+            <!-- =========================
+                 PAYMENT AMOUNT
+            ========================= -->
+
+            <div class="amount">
+
+                <span id="amount">
+                    200
+                </span>
+
+                .00 บาท
+
+            </div>
+
+
+            <p class="note">
+
+                กรุณาตรวจสอบจำนวนเงินก่อนชำระ
+                <br>
+
+                และเก็บหลักฐานการโอนเงินไว้
+
+            </p>
+
+
+            <!-- =========================
+                 BUTTONS
+            ========================= -->
+
+            <div class="actions">
+
+                <a
+                    class="booking"
+                    href="index.html#booking"
+                >
+                    กลับไปหน้าจอง
+                </a>
+
+
+                <a
+                    class="home"
+                    href="index.html"
+                >
+                    กลับหน้าแรก
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+        /* =========================
+           GET BOOKING DATA
+        ========================= */
+
+        const raw =
+            sessionStorage.getItem(
+                "kotpangBooking"
+            );
+
+
+        if (raw) {
+
+            try {
+
+                const data =
+                    JSON.parse(raw);
+
+
+                /* =========================
+                   BOOKING NUMBER
+                ========================= */
+
+                document
+                    .getElementById(
+                        "bookingNumber"
+                    )
+                    .textContent =
+                    data.bookingNumber || "-";
+
+
+                /* =========================
+                   COURSE
+                ========================= */
+
+                document
+                    .getElementById(
+                        "course"
+                    )
+                    .textContent =
+                    data.course || "-";
+
+
+                /* =========================
+                   DATE
+                ========================= */
+
+                document
+                    .getElementById(
+                        "date"
+                    )
+                    .textContent =
+                    data.date || "-";
+
+
+                /* =========================
+                   NAME
+                ========================= */
+
+                document
+                    .getElementById(
+                        "name"
+                    )
+                    .textContent =
+                    data.name || "-";
+
+
+                /* =========================
+                   PHONE
+                ========================= */
+
+                document
+                    .getElementById(
+                        "phone"
+                    )
+                    .textContent =
+                    data.phone || "-";
+
+
+                /* =========================
+                   AMOUNT
+                ========================= */
+
+                document
+                    .getElementById(
+                        "amount"
+                    )
+                    .textContent =
+                    data.amount || 200;
+
+
+            } catch (error) {
+
+                console.error(
+                    "ไม่สามารถอ่านข้อมูลการจองได้",
+                    error
+                );
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
