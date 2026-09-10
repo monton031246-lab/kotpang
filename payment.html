@@ -10,7 +10,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>ชำระเงิน | โคตรปัง</title>
+    <title>
+        ชำระเงิน | โคตรปัง
+    </title>
 
     <style>
 
@@ -19,11 +21,19 @@
         }
 
         body {
+
             margin: 0;
-            font-family: Arial, sans-serif;
+
+            font-family:
+                Arial,
+                sans-serif;
+
             background: #f8f3ed;
+
             color: #4b2e1f;
+
         }
+
 
         .payment-page {
 
@@ -36,7 +46,9 @@
             justify-content: center;
 
             padding: 35px 16px;
+
         }
+
 
         .payment-card {
 
@@ -55,14 +67,18 @@
                 rgba(70, 45, 25, 0.12);
 
             text-align: center;
+
         }
+
 
         .payment-icon {
 
             font-size: 42px;
 
             margin-bottom: 4px;
+
         }
+
 
         h1 {
 
@@ -70,7 +86,9 @@
                 0 0 8px;
 
             font-size: 32px;
+
         }
+
 
         .subtitle {
 
@@ -80,7 +98,9 @@
             color: #777;
 
             line-height: 1.7;
+
         }
+
 
         /* =========================
            BOOKING SUMMARY
@@ -97,17 +117,24 @@
             margin-bottom: 22px;
 
             text-align: left;
+
         }
+
 
         .booking-summary p {
 
-            margin: 7px 0;
+            margin:
+                7px 0;
+
         }
+
 
         .booking-summary strong {
 
             color: #6b4630;
+
         }
+
 
         /* =========================
            QR CODE
@@ -115,7 +142,8 @@
 
         .qr-payment {
 
-            width: min(100%, 480px);
+            width:
+                min(100%, 480px);
 
             display: block;
 
@@ -123,7 +151,9 @@
                 0 auto 14px;
 
             border-radius: 12px;
+
         }
+
 
         /* =========================
            AMOUNT
@@ -139,7 +169,9 @@
 
             margin:
                 4px 0 2px;
+
         }
+
 
         .note {
 
@@ -149,7 +181,9 @@
 
             margin:
                 0 0 20px;
+
         }
+
 
         /* =========================
            BUTTONS
@@ -164,7 +198,9 @@
             justify-content: center;
 
             flex-wrap: wrap;
+
         }
+
 
         .actions a {
 
@@ -178,21 +214,27 @@
             border-radius: 12px;
 
             font-weight: 700;
+
         }
+
 
         .home {
 
             background: #6b4630;
 
             color: white;
+
         }
+
 
         .booking {
 
             background: #f0e5d8;
 
             color: #4b2e1f;
+
         }
+
 
         /* =========================
            MOBILE
@@ -206,16 +248,21 @@
                     24px 14px;
 
                 border-radius: 22px;
+
             }
+
 
             h1 {
 
                 font-size: 27px;
+
             }
+
 
             .amount {
 
                 font-size: 27px;
+
             }
 
         }
@@ -229,7 +276,6 @@
 
 
     <main class="payment-page">
-
 
         <section class="payment-card">
 
@@ -256,7 +302,9 @@
             <div class="booking-summary">
 
                 <p>
+
                     🎫
+
                     <strong>
                         เลขที่การจอง:
                     </strong>
@@ -264,11 +312,14 @@
                     <span id="bookingNumber">
                         -
                     </span>
+
                 </p>
 
 
                 <p>
+
                     🍰
+
                     <strong>
                         คอร์ส:
                     </strong>
@@ -276,11 +327,14 @@
                     <span id="course">
                         -
                     </span>
+
                 </p>
 
 
                 <p>
+
                     📅
+
                     <strong>
                         วันที่เรียน:
                     </strong>
@@ -288,11 +342,14 @@
                     <span id="date">
                         -
                     </span>
+
                 </p>
 
 
                 <p>
+
                     👤
+
                     <strong>
                         ชื่อ:
                     </strong>
@@ -300,11 +357,14 @@
                     <span id="name">
                         -
                     </span>
+
                 </p>
 
 
                 <p>
+
                     📱
+
                     <strong>
                         เบอร์:
                     </strong>
@@ -312,6 +372,7 @@
                     <span id="phone">
                         -
                     </span>
+
                 </p>
 
             </div>
@@ -346,15 +407,13 @@
             <p class="note">
 
                 กรุณาตรวจสอบจำนวนเงินก่อนชำระ
-                <br>
-
                 และเก็บหลักฐานการโอนเงินไว้
 
             </p>
 
 
             <!-- =========================
-                 BUTTONS
+                 ACTION BUTTONS
             ========================= -->
 
             <div class="actions">
@@ -379,15 +438,14 @@
 
         </section>
 
-
     </main>
 
 
-    <script>
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
-        /* =========================
-           GET BOOKING DATA
-        ========================= */
+    <script>
 
         const raw =
             sessionStorage.getItem(
@@ -403,76 +461,52 @@
                     JSON.parse(raw);
 
 
-                /* =========================
-                   BOOKING NUMBER
-                ========================= */
-
                 document
                     .getElementById(
                         "bookingNumber"
                     )
                     .textContent =
-                    data.bookingNumber || "-";
+                        data.bookingNumber || "-";
 
-
-                /* =========================
-                   COURSE
-                ========================= */
 
                 document
                     .getElementById(
                         "course"
                     )
                     .textContent =
-                    data.course || "-";
+                        data.course || "-";
 
-
-                /* =========================
-                   DATE
-                ========================= */
 
                 document
                     .getElementById(
                         "date"
                     )
                     .textContent =
-                    data.date || "-";
+                        data.date || "-";
 
-
-                /* =========================
-                   NAME
-                ========================= */
 
                 document
                     .getElementById(
                         "name"
                     )
                     .textContent =
-                    data.name || "-";
+                        data.name || "-";
 
-
-                /* =========================
-                   PHONE
-                ========================= */
 
                 document
                     .getElementById(
                         "phone"
                     )
                     .textContent =
-                    data.phone || "-";
+                        data.phone || "-";
 
-
-                /* =========================
-                   AMOUNT
-                ========================= */
 
                 document
                     .getElementById(
                         "amount"
                     )
                     .textContent =
-                    data.amount || 200;
+                        data.amount || 200;
 
 
             } catch (error) {
